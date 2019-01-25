@@ -9,15 +9,14 @@ app.use(bodyParser.json())
 
 massive(process.env.CONNECTION_STRING).then((db) => {
   app.set('db', db)
-}).then((err) => {
-  console.log(err)
+  db.seed()
 });
 
 app.get('/api/inventory', ctrl.getProduct)
 
 app.post('/api/product', ctrl.postProduct)
 
-// app.delete('/api/inventory/:id', ctrl.deleteProduct)
+app.delete('/api/inventory/:id', ctrl.deleteProduct)
 
 
 let PORT = process.env.SERVERPORT;

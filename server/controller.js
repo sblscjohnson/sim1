@@ -18,4 +18,9 @@ module.exports = {
     })
   },
 
+  deleteProduct: (req, res, body) => {
+    let {id} = req.params;
+    req.app.get('db')
+  }
+  
 }

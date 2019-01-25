@@ -60,19 +60,21 @@ class Form extends Component{
 
   render() {
     return(
-      <div>
-        <p>Image URL:</p>
+      <div className="theForm">
+        <h4>Image URL:</h4>
         <input type="text" onChange={(e) => this.handleChangeImageURL(e.target.value)}
         value={this.state.image_url} />
-        <p>Product Name:</p>
+        <h4>Product Name:</h4>
         <input type="text" onChange={(e) => this.handleChangeProductName(e.target.value)}
         value={this.state.product_name} />
         {console.log(this.state)}
-        <p>Price:</p>
+        <h4>Price:</h4>
         <input type="text" onChange={(e) => this.handleChangePrice(e.target.value)}
         value={this.state.price} />
-        <button onClick = {() => this.handleAddProduct()}>Add to Inventory</button>
-        <button onClick={() => this.handleClear()}>Cancel</button>
+        <div className="theButtons">
+          <button className="butt" onClick={() => this.handleAddProduct()}>Add to Inventory</button>
+          <button className="butt" onClick={() => this.handleClear()}>Cancel</button>
+        </div>
       </div>
     )
   }
