@@ -46,16 +46,16 @@ class Form extends Component{
       product_name: this.state.product_name,
       price: this.state.price
     }
-    axios.post('/api/product', bodyObj).then(response => {
+    axios.post('/api/inventory', bodyObj).then(response => {
       this.setState({
         inventory: response.data
       })
     })
 
     this.handleClear()
+    this.props.getInventory()
     
   }
-
   
 
   render() {

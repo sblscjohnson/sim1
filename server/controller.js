@@ -18,9 +18,25 @@ module.exports = {
     })
   },
 
-  deleteProduct: (req, res, body) => {
+  deleteProduct: (req, res) => {
     let {id} = req.params;
-    req.app.get('db')
+    req.app.get('db').delete_product(id).then(() => {
+      res.sendStatus(200)
+    }).catch((err) => {
+      console.log('that was not very cash money of you')
+      res.status(500).send('that was not very cash money of you')
+    })
+  },
+
+  editProduct: (req, res) => {
+    let {id} = req.params;
+    let {image_url, product_name, price} = req.body;
+    req.app.get('db').edit_product([image_url, product_name, price, id]).then(() => {
+      res.sendStatus(500)
+    }).catch((err) => {
+      console.log('that was not very cash money of you')
+      res.status(500).send('that was not very cash money of you')
+    })
   }
-  
+
 }

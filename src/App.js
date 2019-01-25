@@ -5,6 +5,7 @@ import './App.css';
 import Header from './Components/Header'
 import Dashboard from './Components/Dashboard';
 import Form from './Components/Form';
+import {HashRouter, Route, Switch, Link} from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -12,6 +13,7 @@ class App extends Component {
     this.state = {
       inventory: []
     }
+    this.handleGetInventory=this.handleGetInventory.bind(this)
   }
 
   componentDidMount() {
@@ -35,13 +37,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <div className="theThings">
-          <Dashboard inventory={this.state.inventory} />
-          <Form getInventory={this.handleGetInventory} />
+      // <HashRouter>
+        <div className="App">
+          <Header />
+          <div className="theThings">
+            <Dashboard inventory={this.state.inventory} />
+            <Form getInventory={this.handleGetInventory} />
+          </div>
         </div>
-      </div>
+      // </HashRouter>
     );
   }
 }

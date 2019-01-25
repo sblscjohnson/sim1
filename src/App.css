@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .App {
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -49,7 +52,7 @@
 
 .butt {
   background-color: #ed6b5a;
-  border-radius: 5px;
+  border-radius: 8px;
   height: 7vh;
 }
 

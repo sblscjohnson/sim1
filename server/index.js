@@ -12,11 +12,13 @@ massive(process.env.CONNECTION_STRING).then((db) => {
   db.seed()
 });
 
-app.get('/api/inventory', ctrl.getProduct)
+app.get('/api/inventory', ctrl.getProduct);
 
-app.post('/api/product', ctrl.postProduct)
+app.post('/api/inventory', ctrl.postProduct);
 
-app.delete('/api/inventory/:id', ctrl.deleteProduct)
+app.delete('/api/inventory/:id', ctrl.deleteProduct);
+
+app.put('api/inventory/:id', ctrl.editProduct);
 
 
 let PORT = process.env.SERVERPORT;

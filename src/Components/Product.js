@@ -10,6 +10,7 @@ const Product = (props) => {
       <div>
         <h3>Name: {props.product_name}</h3>
         <h3>Price: ${props.price}</h3>
+        <button className="butt">Delete</button>
       </div>
     </div>
   )
