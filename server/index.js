@@ -15,7 +15,9 @@ massive(process.env.CONNECTION_STRING).then((db) => {
 
 app.get('/api/inventory', ctrl.getProduct)
 
+app.post('/api/product', ctrl.postProduct)
 
+// app.delete('/api/inventory/:id', ctrl.deleteProduct)
 
 
 let PORT = process.env.SERVERPORT;

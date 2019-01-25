@@ -8,7 +8,7 @@ class Dashboard extends Component{
     
     let mappedProducts = this.props.inventory.map((eachProduct) => {
       return (
-        <Product key={eachProduct.index} inventory={eachProduct} name={eachProduct.name} price={eachProduct.price} image={eachProduct.image_url} />
+        <Product key={eachProduct.index} inventory={eachProduct} product_name={eachProduct.product_name} price={eachProduct.price} image_url={eachProduct.image_url} />
       )
     })
     
